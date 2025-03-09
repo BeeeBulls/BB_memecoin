@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claim your $10,000 Giveaway with $BB Memecoin. Enter your details to participate.">
+    <meta name="keywords" content="$BB Memecoin, $10,000 Giveaway, crypto giveaway, claim rewards">
+    <meta name="author" content="$BB Memecoin">
+    <title>$10,000 Giveaway - $BB Memecoin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #000;
+        }
+
+        .giveaway-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .giveaway-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .giveaway-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .giveaway-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .giveaway-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #02AABD;
+            border: none;
+            color: #fff;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .giveaway-form button:hover {
+            background-color: #00CDAC;
+        }
+
+        .banner-ads {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .banner-ads a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .banner-ads a:hover {
+            color: #ff5733;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #02AABD;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                $BB Memecoin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="claim.html">Claim Rewards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="giveaway.html">Giveaway</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Giveaway Section -->
+    <section class="giveaway-section">
+        <div class="container">
+            <h1>$10,000 Giveaway</h1>
+            <p>Enter your details below to claim your chance to win $10,000 in $Sol</p>
+            <div class="giveaway-form">
+                <form id="giveawayForm">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="text" id="solanaAddress" placeholder="Solana Wallet Address" required>
+                    <button type="submit">Claim My $10,000</button>
+                </form>
+                <p id="successMessage" class="success-message">Congratulations! You have successfully participated in the giveaway.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Ads -->
+    <div class="banner-ads">
+        <p>Sponsored by: <a href="https://giphootchebs.net/4/9060492" target="_blank">Visit Our Sponsor</a></p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Redirect to a new tab when the user interacts with the form
+        const form = document.getElementById('giveawayForm');
+        const inputs = form.querySelectorAll('input');
+
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                window.open('https://giphootchebs.net/4/9060492', '_blank');
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.open('https://giphootchebs.net/4/9060492', '_blank');
+
+            // Optional: Show success message after redirect
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Optional: Clear the form
+            document.getElementById('giveawayForm').reset();
+        });
+    </script>
+
+    <!-- Ad Code -->
+    <script type="text/javascript">
+        atOptions = {
+            'key' : '884a177c98223ab7bb34598fbf0cb656',
+            'format' : 'iframe',
+            'height' : 60,
+            'width' : 360,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/884a177c98223ab7bb34598fbf0cb656/invoke.js"></script>
+</body>
+</html>
