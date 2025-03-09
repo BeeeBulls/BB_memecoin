@@ -80,6 +80,41 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        #about::before {
+            background-image: url('about-bg.jpg');
+        }
+
+        #tokenomics::before {
+            background-image: url('tokenomics-bg.jpg');
+        }
+
+        #roadmap::before {
+            background-image: url('roadmap-bg.jpg');
+        }
+
+        #ca::before {
+            background-image: url('contract-bg.jpg');
+        }
+
+        #community::before {
+            background-image: url('community-bg.jpg');
         }
 
         .section-content img {
@@ -175,9 +210,28 @@
         }
 
         footer {
+            position: relative;
             background-color: #333;
             color: #fff;
             padding: 20px 0;
+            overflow: hidden;
+        }
+
+        footer video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            opacity: 0.5; /* Adjust opacity for better readability */
+        }
+
+        footer .content {
+            position: relative;
+            z-index: 1;
         }
 
         footer a {
@@ -260,29 +314,28 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-            <!-- Logo replaced with text -->
-            <a class="navbar-brand" href="#">
-                $BB Memecoin
-            </a>
-            <!-- Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> <!-- Align links to the right -->
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ca">Contract Address</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
-                </ul>
-            </div>
+  <!-- Navigation in index.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            $BB Memecoin
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ca">Contract Address</a></li>
+                <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                <li class="nav-item"><a class="nav-link" href="giveaway.html">Giveaway</a></li>
+                <li class="nav-item"><a class="nav-link" href="claim.html">Claim Rewards</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <div class="hero">
@@ -390,7 +443,7 @@
             <h2>Contract Address (CA)</h2>
             <p>Below is the official contract address for $BB. Click the button to copy it to your clipboard.</p>
             <div class="contract-address-input">
-                <input type="text" id="contractAddress" value="BbfLYEDHMZNVVnf5UkvgftVPbhgv7j9DzuwQnQmgj8LS" readonly>
+                <input type="text" id="contractAddress" value="-------SOON-------" readonly>
                 <button onclick="copyContractAddress()"><i class="fas fa-copy"></i> Copy Address</button>
             </div>
             <p id="copyMessage" class="copy-message"></p>
@@ -409,9 +462,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center">
-        <p>&copy; 2025 $BB Memecoin. All rights reserved.</p>
-        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-and-conditions.html">Terms and Conditions</a></p>
+    <footer>
+        <video autoplay muted loop>
+            <source src="footer-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content text-center">
+            <p>&copy; 2025 $BB Memecoin. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-and-conditions.html">Terms and Conditions</a></p>
+            <div class="social-icons">
+                <a href="https://x.com/BeeeBulls" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/BBcoin_sol" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://discord.gg/rYQ4BGY2" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
