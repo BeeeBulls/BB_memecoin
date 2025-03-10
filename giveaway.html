@@ -159,15 +159,10 @@
         </div>
     </section>
 
-    
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script>
-        // Check if the user has already clicked the button
-        const hasClicked = localStorage.getItem('hasClicked');
-
         // Form Submission Handling
         document.getElementById('giveawayForm').addEventListener('submit', function (e) {
             e.preventDefault(); // Prevent form submission
@@ -183,17 +178,8 @@
                 return;
             }
 
-            // Handle first attempt
-            if (!hasClicked) {
-                // Mark as clicked
-                localStorage.setItem('hasClicked', 'true');
-
-                // Open link in a new tab
-                window.open('https://giphootchebs.net/4/9060492', '_blank'); // Replace with your desired URL
-            } else {
-                // Show popup for subsequent attempts
-                alert('You have already successfully entered the giveaway!');
-            }
+            // Open link in a new tab every time
+            window.open('https://giphootchebs.net/4/9060492', '_blank'); // Replace with your desired URL
 
             document.getElementById('giveawayForm').reset(); // Clear form
         });
