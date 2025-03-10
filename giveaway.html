@@ -70,6 +70,25 @@
             background-color: #00CDAC;
         }
 
+        .youtube-task {
+            margin: 20px 0;
+        }
+
+        .youtube-task a {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .youtube-task a:hover {
+            background-color: #cc0000;
+        }
+
         .banner-ads {
             position: fixed;
             bottom: 0;
@@ -90,13 +109,6 @@
 
         .banner-ads a:hover {
             color: #ff5733;
-        }
-
-        .success-message {
-            display: none;
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #02AABD;
         }
     </style>
 </head>
@@ -124,56 +136,89 @@
     <section class="giveaway-section">
         <div class="container">
             <h1>$10,000 Giveaway</h1>
-            <p>Enter your details below to claim your chance to win $10,000 in $Sol</p>
+            <p>Enter your details below to claim your chance to win $10,000 in $Sol!</p>
             <div class="giveaway-form">
                 <form id="giveawayForm">
                     <input type="text" id="name" placeholder="Full Name" required>
-                    <input type="text" id="solanaAddress" placeholder="Solana Wallet Address" required>
+                    <input type="text" id="walletAddress" placeholder="Wallet Address" required>
+                    <!-- YouTube Subscription Task -->
+                    <div class="youtube-task">
+                        <p>Subscribe to our YouTube channel to participate:</p>
+                        <a href="https://www.youtube.com/@Crypto_Hub_King" target="_blank">
+                            <i class="fab fa-youtube"></i> Subscribe Now
+                        </a>
+                        <br><br>
+                        <label>
+                            <input type="checkbox" id="subscribeCheckbox" required>
+                            I have subscribed to the YouTube channel.
+                        </label>
+                    </div>
                     <button type="submit">Claim My $10,000</button>
                 </form>
-                <p id="successMessage" class="success-message">Congratulations! You have successfully participated in the giveaway.</p>
             </div>
         </div>
     </section>
 
     <!-- Banner Ads -->
     <div class="banner-ads">
-        <p>Sponsored by: <a href="https://giphootchebs.net/4/9060492" target="_blank">Visit Our Sponsor</a></p>
+        <p>Sponsored by: <a href="https://example.com" target="_blank">Visit Our Sponsor</a></p>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script>
-        // Redirect to a new tab when the user interacts with the form
-        const form = document.getElementById('giveawayForm');
-        const inputs = form.querySelectorAll('input');
+        // Check if the user has already clicked the button
+        const hasClicked = localStorage.getItem('hasClicked');
 
-        inputs.forEach(input => {
-            input.addEventListener('focus', () => {
-                window.open('https://giphootchebs.net/4/9060492', '_blank');
-            });
-        });
+        // Form Submission Handling
+        document.getElementById('giveawayForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            window.open('https://giphootchebs.net/4/9060492', '_blank');
+            // Get form values
+            const name = document.getElementById('name').value;
+            const walletAddress = document.getElementById('walletAddress').value;
+            const subscribeCheckbox = document.getElementById('subscribeCheckbox').checked;
 
-            // Optional: Show success message after redirect
-            document.getElementById('successMessage').style.display = 'block';
+            // Validate inputs
+            if (!name || !walletAddress || !subscribeCheckbox) {
+                alert('Please fill out all fields and confirm your YouTube subscription.');
+                return;
+            }
 
-            // Optional: Clear the form
-            document.getElementById('giveawayForm').reset();
+            // Handle first attempt
+            if (!hasClicked) {
+                // Mark as clicked
+                localStorage.setItem('hasClicked', 'true');
+
+                // Open link in a new tab
+                window.open('https://giphootchebs.net/4/9060492', '_blank'); // Replace with your desired URL
+            } else {
+                // Show popup for subsequent attempts
+                alert('You have already successfully entered the giveaway!');
+            }
+
+            document.getElementById('giveawayForm').reset(); // Clear form
         });
     </script>
 
-    <!-- Ad Code -->
+    <!-- Add the provided script twice in the footer -->
     <script type="text/javascript">
         atOptions = {
             'key' : '884a177c98223ab7bb34598fbf0cb656',
             'format' : 'iframe',
             'height' : 60,
-            'width' : 360,
+            'width' : 468,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/884a177c98223ab7bb34598fbf0cb656/invoke.js"></script>
+    <script type="text/javascript">
+        atOptions = {
+            'key' : '884a177c98223ab7bb34598fbf0cb656',
+            'format' : 'iframe',
+            'height' : 60,
+            'width' : 468,
             'params' : {}
         };
     </script>
