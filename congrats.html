@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Congratulations! Your wallet is eligible for 89,000 $BB tokens.">
+    <meta name="keywords" content="$BB Memecoin, $BB rewards, crypto rewards, $BB airdrop">
+    <meta name="author" content="$BB Memecoin">
+    <title>Congratulations - $BB Memecoin</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .congrats-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #000;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: #02AABD;
+            font-weight: bold;
+        }
+
+        .wallet-address {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+
+        .btn-home {
+            background: linear-gradient(45deg, #02AABD, #00CDAC);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-home:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="congrats-container">
+        <h1>🎉 Congratulations! 🎉</h1>
+        <p>Your wallet has been verified and is eligible for <span class="highlight">89,000 $BB tokens</span>.</p>
+        <p>The reward will be sent to your wallet very soon. Please ensure your wallet is connected and ready to receive the tokens.</p>
+        <div class="wallet-address" id="walletAddress">Connected Wallet: <span id="connectedWallet"></span></div>
+        <p>Thank you for being part of the $BB Memecoin community!</p>
+        <button class="btn-home" onclick="window.location.href='index.html'">Return to Home</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Phantom Wallet SDK -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    <script>
+        // Function to display the connected wallet address
+        const displayWalletAddress = () => {
+            const walletAddress = localStorage.getItem('walletAddress');
+            if (walletAddress) {
+                document.getElementById('connectedWallet').innerText = walletAddress;
+            } else {
+                document.getElementById('connectedWallet').innerText = 'Not Connected';
+            }
+        };
+
+        // Display wallet address on page load
+        window.onload = displayWalletAddress;
+    </script>
+</body>
+</html>
